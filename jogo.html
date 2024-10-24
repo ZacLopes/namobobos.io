@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo: Você me ama?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Você me ama?</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Fotos 📷</a></li>
+                <li><a href="quiz.html">Quiz ❔</a></li>
+                <li><a href="carta.html">Cartinha 💌</a></li>
+                <li><a href="contador.html">Contador ⏳</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Container do jogo -->
+    <div class="container">
+        <h1>A vaquinha me ama? 🐮❤️</h1>
+        <div class="buttons">
+            <button id="sim">Sim</button>
+            <button id="nao">Não</button>
+        </div>
+        <!-- Coração que deve aparecer ao clicar no botão "Sim" -->
+        <div id="heart">♥️</div>
+    </div>
+    
+    <!-- Adicionando o som -->
+    <audio id="som_sim">
+        <source src="cow_sound.wav" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <!-- Script para controlar a interação -->
+    <script src="script.js"></script>
+</body>
+</html>
