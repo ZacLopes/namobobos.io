@@ -1,0 +1,334 @@
+/* Estilos globais */
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #2c0038;
+    color: #f4e1d2;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.4s ease, color 0.4s ease, opacity 0.6s ease-in-out; /* Transição suave ao mudar de tema e páginas */
+    opacity: 1; /* Define a opacidade inicial */
+}
+
+body.fade-out {
+    opacity: 0; /* Transição suave para desvanecimento */
+}
+
+body button {
+    background-color: #5a0b43; /* Cor dos botões no modo noturno */
+    color: #f4e1d2;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza a mudança de cor nos botões */
+}
+
+header {
+    background-color: #3c004a;
+    text-align: center;
+    padding: 2rem;
+    transition: background-color 0.4s ease; /* Transição suave ao mudar a cor do cabeçalho */
+}
+
+header h1 {
+    color: #ffd1dc;
+    font-size: 3rem;
+    transition: color 0.4s ease; /* Transição suave para o título */
+}
+
+header p {
+    font-size: 1.5rem;
+    color: #fff;
+    transition: color 0.3s ease; /* Transição suave para o subtítulo */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    font-family: 'Playfair Display', serif; /* Aplica a fonte explicitamente aos links */
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transição suave ao passar o mouse sobre os links */
+}
+
+nav ul li a:hover {
+    color: #ffd1dc; /* Efeito ao passar o mouse: muda para a cor rosa claro */
+    transform: scale(1.05); /* Um leve zoom no link */
+}
+
+/* Galeria de fotos */
+#galeria {
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajuste automático das colunas */
+    gap: 5rem; /* Espaçamento entre as imagens */
+    max-width: 1200px; /* Largura máxima da galeria */
+    margin: 0 auto; /* Centraliza a galeria */
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; /* Suaviza o zoom e a sombra */
+    display: block; /* Garante que a imagem se comporte como um bloco */
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Efeito de sombra ao passar o mouse */
+}
+
+/* Estilos do Quiz */
+#quiz {
+    text-align: center;
+    padding: 2rem;
+}
+
+#quiz button {
+    font-family: 'Playfair Display', serif; /* Aplica a fonte aos botões */
+    margin: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    background-color: #ff9999;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves no botão */
+}
+
+#quiz button:hover {
+    background-color: #ff6666;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao passar o mouse */
+}
+
+#resposta, #resposta2, #resposta3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+#mensagemFinal {
+    color: green;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Classe para resposta errada */
+.resposta-errada {
+    background-color: red !important; /* Torna o botão vermelho */
+    color: white; /* Texto branco */
+}
+
+.resposta-certa {
+    background-color: green !important; /* Torna o botão verde */
+    color: white;
+}
+
+/* Estilos da Carta */
+#carta {
+    text-align: center;
+}
+
+#cartaImagem {
+    margin-top: 1rem;
+}
+
+#imagemCarta {
+    width: 200px; /* Ajuste o tamanho da imagem da carta */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza o efeito de zoom e a sombra */
+}
+
+#imagemCarta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra suave ao passar o mouse */
+}
+
+#textoCarta {
+    font-family: 'Playfair Display', serif; /* Aplica a fonte ao texto da carta */
+    background-color: #000000;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 1rem auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Suaviza a transição ao aparecer o texto */
+    display: none;
+}
+
+#textoCarta.mostrar {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos para o Jogo */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#heart {
+    position: fixed; /* Posiciona o coração em relação à janela do navegador */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%) scale(0); /* Ajusta a posição e inicia com escala 0 */
+    font-size: 20rem;
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+#heart.mostrar-coracao {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); /* Escala para o tamanho original */
+}
+
+#heart.esconder-coracao {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0); /* Retorna à escala 0 */
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 13rem;
+}
+
+button#sim,
+button#nao {
+    font-family: 'Playfair Display', serif; /* Aplica a fonte aos botões do jogo */
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #ff6666;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Suaviza as transições no botão */
+}
+
+button#sim:hover,
+button#nao:hover {
+    background-color: #ff9999;
+    transform: scale(1.1); /* Aumenta um pouco mais o botão ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Efeito de sombra ao passar o mouse */
+}
+
+/* Animação suave para o botão "Não" */
+#nao {
+    transition: left 0.2s ease, top 0.2s ease;
+}
+
+/* Estilos do Contador de Dias Juntos */
+#contador-dias {
+    text-align: center;
+    margin-top: 17rem;
+}
+
+#contador-dias h2 {
+    font-family: 'Playfair Display', serif;
+    color: #ff9999;
+    font-size: 2.5rem;
+}
+
+/* Estilo do rodapé */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #ff9999;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+footer:hover {
+    background-color: #ff6666; /* Efeito suave ao passar o mouse sobre o rodapé */
+}
+
+/* Corações flutuando */
+@keyframes flutuar {
+    0% {
+        top: 100%; /* Inicia da parte inferior da janela */
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        top: -100px; /* Sobe para fora da janela */
+        transform: scale(0.5);
+        opacity: 0;
+    }
+}
+
+.heart {
+    position: fixed; /* Mantém o coração fixo em relação à janela de visualização */
+    top: 100%; /* Faz com que os corações comecem a aparecer na parte inferior da tela */
+    left: 0; /* Depois a posição horizontal é definida de forma aleatória */
+    z-index: 9999;
+    pointer-events: none;
+    font-size: 2rem;
+    color: red;
+    animation: flutuar 6s linear infinite;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Suaviza a animação dos corações */
+}
+
+.heart:nth-child(odd) {
+    animation-duration: 6s;
+}
+
+.heart:nth-child(even) {
+    animation-duration: 8s;
+}
+
+/* Estrelas piscando */
+@keyframes piscar {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: piscar 2s infinite;
+    z-index: 9999; /* Garante que as estrelas apareçam sobre outros elementos */
+    pointer-events: none;
+    transition: opacity 0.5s ease; /* Suaviza a transição de brilho das estrelas */
+}
+
+.star:nth-child(odd) {
+    animation-duration: 1.5s;
+}
+
+.star:nth-child(even) {
+    animation-duration: 2.5s;
+}
+
+
+
