@@ -2,13 +2,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Adiciona transição suave entre as páginas
     const links = document.querySelectorAll('nav ul li a');
-    
+
     links.forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();  // Impede o comportamento padrão do link
             document.body.classList.add('fade-out');  // Adiciona a classe de animação
             const href = this.getAttribute('href');  // Pega o destino do link
-            
+
             setTimeout(function () {
                 window.location.href = href;  // Após a animação, redireciona para a nova página
             }, 600);  // Tempo para completar a animação antes de mudar de página (600ms)
@@ -136,7 +136,11 @@ document.addEventListener("DOMContentLoaded", function () {
         { respostaElement: document.getElementById("resposta4"), btnCerta: document.getElementById("btnCerta4"), btnErradas: document.querySelectorAll(".pergunta4 .btnErrada") },
         { respostaElement: document.getElementById("resposta5"), btnCerta: document.getElementById("btnCerta5"), btnErradas: document.querySelectorAll(".pergunta5 .btnErrada") },
         { respostaElement: document.getElementById("resposta6"), btnCerta: document.getElementById("btnCerta6"), btnErradas: document.querySelectorAll(".pergunta6 .btnErrada") },
-        { respostaElement: document.getElementById("resposta7"), btnCerta: document.getElementById("btnCerta7"), btnErradas: document.querySelectorAll(".pergunta7 .btnErrada") }
+        { respostaElement: document.getElementById("resposta7"), btnCerta: document.getElementById("btnCerta7"), btnErradas: document.querySelectorAll(".pergunta7 .btnErrada") },
+        { respostaElement: document.getElementById("resposta8"), btnCerta: document.getElementById("btnCerta8"), btnErradas: document.querySelectorAll(".pergunta8 .btnErrada") },
+        { respostaElement: document.getElementById("resposta9"), btnCerta: document.getElementById("btnCerta9"), btnErradas: document.querySelectorAll(".pergunta9 .btnErrada") },
+        { respostaElement: document.getElementById("resposta10"), btnCerta: document.getElementById("btnCerta10"), btnErradas: document.querySelectorAll(".pergunta10 .btnErrada") },
+        { respostaElement: document.getElementById("resposta11"), btnCerta: document.getElementById("btnCerta11"), btnErradas: document.querySelectorAll(".pergunta11 .btnErrada") }
     ];
 
     perguntas.forEach(pergunta => {
@@ -144,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
         configurarPergunta(pergunta.respostaElement, pergunta.btnCerta, pergunta.btnErradas, allButtons);
     });
 
-    
+
 
 
 
@@ -229,3 +233,5 @@ document.addEventListener("DOMContentLoaded", function () {
     // Chama a função para exibir os dias juntos
     calcularDiasJuntos();
 });
+
+
