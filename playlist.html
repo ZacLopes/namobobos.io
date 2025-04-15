@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Playlist Especial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Nossa Playlist Especial 🎶</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Fotos 📷</a></li>
+                <li><a href="quiz.html">Quiz ❔</a></li>
+                <li><a href="carta.html">Cartinha 💌</a></li>
+                <li><a href="jogo.html">Teste de Amor 🤨</a></li>
+                <li><a href="contador.html">Contador ⏳</a></li>
+                <li><a href="playlist.html">Playlist 🎧</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção da Playlist -->
+    <section id="playlist-section" style="text-align: center; padding: 2rem;">
+        <h2>Nossas Playlists Bebezinha!</h2>
+        <p>Ouça alguma das músicas para matar a saudade e para lembrar de nós meu amorzão! </p>
+
+        <!-- Container da playlist com o embed do Spotify -->
+        <div class="playlist-container" style="max-width: 800px; margin: 2rem auto;">
+            <!-- Aqui você deve colocar sua playlist principal -->
+            <iframe id="spotifyPlaylist" style="border-radius:12px"
+                src="https://open.spotify.com/embed/playlist/7dMQONJsTuJ4rypmJkavCT?utm_source=generator&theme=0"
+                width="100%" height="352" frameBorder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+        </div>
+
+        <!-- Botões para interagir -->
+        <div class="playlist-buttons" style="margin-top: 1rem;">
+            <button id="changePlaylist">Mudar Playlist</button>
+        </div>
+    </section>
+
+    <!-- Script específico da página Playlist -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const spotifyPlaylist = document.getElementById("spotifyPlaylist");
+            const changeBtn = document.getElementById("changePlaylist");
+            const likeBtn = document.getElementById("likePlaylist");
+
+            // Guarda a URL da playlist principal que está definida no HTML
+            const mainPlaylistURL = spotifyPlaylist.getAttribute('src');
+            // URL da playlist alternativa que você deseja alternar
+            const alternativePlaylistURL = "https://open.spotify.com/embed/playlist/0UO4Me5dyocxgDxO50FfUJ?si=8a0a3ccfa5364477";
+
+            // Evento para alternar entre as playlists
+            changeBtn.addEventListener("click", function () {
+                if (spotifyPlaylist.getAttribute('src') === mainPlaylistURL) {
+                    spotifyPlaylist.setAttribute('src', alternativePlaylistURL);
+                } else {
+                    spotifyPlaylist.setAttribute('src', mainPlaylistURL);
+                }
+            });
+        });
+    </script>
+
+    <!-- Script global do site -->
+    <script src="script.js"></script>
+</body>
+
+</html>
